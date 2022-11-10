@@ -27,6 +27,7 @@ class Application:
         self.para = Simulation_parameters()
         self.folder_path = ""
         self.visual_data = 0
+        self.upside_down = 0
         
         
     '''
@@ -198,9 +199,11 @@ class Application:
         '''
         sensor_plane = cv2.resize(sensor_plane, (self.rescale_size, self.rescale_size))
         print("Image resized to")
-        print(self.rescale_size)  
-        sensor_plane = cv2.flip(sensor_plane, 0)
-        print("Image flipped vertically")
+        print(self.rescale_size)
+        
+        if self.upside_down:
+            sensor_plane = cv2.flip(sensor_plane, 0)
+            print("Image flipped vertically")
         
         
         '''
@@ -277,3 +280,5 @@ class Application:
     def set_sar_image_rescale(self, value):
         self.rescale_size = value
         
+    def set_upside_down(self, value):
+        self.upside_down = value

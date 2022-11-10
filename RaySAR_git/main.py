@@ -43,6 +43,7 @@ def main(argv):
             app.set_system_response_decay(settings['responseDecey'])
             app.set_visual_data(settings['visualData'])
             app.set_sar_image_rescale(settings['imageRescale'])
+            app.set_upside_down(settings['upsideDown'])
             app.set_folder_path(settings['path'])
             app.run()
          
@@ -52,9 +53,3 @@ def main(argv):
     
 if __name__ == '__main__':
     main(sys.argv)
-    
-    
-    
-    
-    
-    
